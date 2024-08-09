@@ -1,6 +1,7 @@
 import React from 'react';
 import Input from './Input';
 import Radio from './Radio';
+import File from './File';
 
 const FormikControl = (props) => {
     switch (props.control) {
@@ -9,6 +10,9 @@ const FormikControl = (props) => {
 
         case 'radio':
             return <Radio {...props} />
+
+        case 'file':
+            return <File {...props} />
 
         default:
             break;

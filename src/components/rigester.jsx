@@ -14,6 +14,7 @@ const initialValues = {
     phone : '' ,
     password : '' ,
     c_password : '' ,
+    image : null ,
 }
 
 const onSubmit = (values , submitProps)=>{
@@ -33,6 +34,8 @@ const validationSchema = Yup.object({
     }) ,
     password : Yup.string().required('لطفا مقداری بنویسید .').min(4,'حداقل 4 کاراکتر وارد کنید .') ,
     c_password : Yup.string().required('لطفا مقداری بنویسید .').oneOf([Yup.ref('password', '')] , 'پسورد مطابقت ندارد .') ,
+    image : Yup.mixed().required('لطفا یک عکس وارد کنید .')
+    .test('fileFormat' , 'لطفا فرمت png یا jpg وارد کنید .' , value=>value && value.type.includes('image/') ) ,
 })
 // ============== initial props ===============
 
@@ -80,6 +83,8 @@ const Rigister = () => {
                             <FormikControl type='password' name='password' control='input' label='رمز عبور' />
 
                             <FormikControl type='password' name='c_password' control='input' label='تکرار رمز عبور' />
+
+                            <FormikControl type='file' name='image' control='file' label='تصویر پروفایل' formik={formik} />
 
 
                             <div className='d-flex w-100 mt-4'>
