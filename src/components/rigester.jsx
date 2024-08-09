@@ -15,10 +15,18 @@ const initialValues = {
     password : '' ,
     c_password : '' ,
     image : null ,
+    skills : [] ,
+    other_skills : [''] ,
 }
 
 const onSubmit = (values , submitProps)=>{
     console.log(values);
+
+
+    setTimeout(() => {
+        submitProps.resetForm()
+        submitProps.setSubmitting(false)
+    }, 3000);
 }
 
 const validationSchema = Yup.object({
@@ -36,6 +44,7 @@ const validationSchema = Yup.object({
     c_password : Yup.string().required('لطفا مقداری بنویسید .').oneOf([Yup.ref('password', '')] , 'پسورد مطابقت ندارد .') ,
     image : Yup.mixed().required('لطفا یک عکس وارد کنید .')
     .test('fileFormat' , 'لطفا فرمت png یا jpg وارد کنید .' , value=>value && value.type.includes('image/') ) ,
+    skills : Yup.array().min(1,'لطفا یک مقدار انتخاب کنید') ,
 })
 // ============== initial props ===============
 
@@ -45,6 +54,13 @@ const validationSchema = Yup.object({
 const registerMode = [
     {id : 'phone' , value : 'موبایل'} ,
     {id : 'email' , value : 'ایمیل'} ,
+]
+
+const skills = [
+    {id : 1 , value : 'HTML'} ,
+    {id : 2 , value : 'CSS'} ,
+    {id : 3 , value : 'JS'} ,
+    {id : 4 , value : 'REACT'} ,
 ]
 // ============== local props ===============
 
@@ -64,7 +80,7 @@ const Rigister = () => {
              validateOnMount
             >
                 {formik=>{
-                    console.log(formik);
+                    // console.log(formik.values.other_skills);
                     return(
                         <Form className='w-100 px-4 pt-1 pb-4 mt-2'>
                             
@@ -86,6 +102,10 @@ const Rigister = () => {
 
                             <FormikControl type='file' name='image' control='file' label='تصویر پروفایل' formik={formik} />
 
+                            <FormikControl type='checkbox' name='skills' control='checkbox' label='مهارت ها' formik={formik} options={skills} />
+
+                            <FormikControl name='other_skills' control='fildArray' label='مهارت دیگری دارید ؟' formik={formik}  />
+                            
 
                             <div className='d-flex w-100 mt-4'>
                                 <button className='btn btn-primary w-50 mx-auto' disabled={!formik.isValid || formik.isSubmitting}>
