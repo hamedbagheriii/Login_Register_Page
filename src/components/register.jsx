@@ -3,6 +3,9 @@ import React from 'react';
 import FormikControl from './formikComponenet/formikControl';
 import * as Yup from 'yup'
 import PersonalError from './personalComponent/personalError';
+import axios from 'axios';
+import swal from 'sweetalert';
+import { Link } from 'react-router-dom';
 
 
 
@@ -23,6 +26,54 @@ const initialValues = {
 
 const onSubmit = (values , submitProps)=>{
     console.log(values);
+
+    const formData = new FormData();
+
+    // formData.append('person_name' , values.person_name);
+
+    // formData.append('user_name' , values.user_name);
+
+    // formData.append('register_mode' , values.register_mode);
+
+    // formData.append('email' , values.email);
+
+    const mobile = '0' + values.phone;
+    console.log(mobile);
+
+    formData.append('phone' , mobile);
+    
+    formData.append('password' , values.password);
+
+    formData.append('c_password' , values.c_password);
+
+    // formData.append('image' , values.image);
+
+    // formData.append('skills' , values.skills);
+
+    // formData.append('other_skills' , values.other_skills);
+
+    // formData.append('rules' , values.rules);
+    
+
+    axios.post('URL/register', formData ,{
+        headers : {
+            'Content-Type' : 'multipart/form-data'
+        }
+    }).then(res=>{
+        if (res.status == 200) {
+            console.log('موفق');
+            swal(res.data.message);
+            localStorage.setItem('token',res.data.token);
+        }
+        else{
+            console.log('ناموفق');
+            swal(res.data.phone[0]);
+        }
+    }).catch(err=>{
+        console.log(err);
+        swal(err.data[0])
+    })
+
 
 
     setTimeout(() => {
@@ -70,7 +121,7 @@ const skills = [
 
 
 
-const Rigister = () => {
+const Register = () => {
     return (
         <div className='bg-white w-100  mx-auto' style={{borderRadius:15,maxWidth:550}}>
             <div className='header w-75 mx-auto pt-5 d-flex flex-column border-bottom border-1 pb-4 '>
@@ -84,7 +135,7 @@ const Rigister = () => {
              validateOnMount
             >
                 {formik=>{
-                    console.log(formik);
+                    // console.log(formik);
                     return(
                         <Form className='w-100 px-4 pt-1 pb-4 mt-2'>
                             
@@ -129,6 +180,12 @@ const Rigister = () => {
                                     : 'ثبت نام' }
                                 </button>
                             </div>
+
+                            <div className='d-flex w-100 mt-4 mb-1'>
+                                <Link to={'/Login'} className='mx-auto text-dark fw-bold' style={{fontSize:14,textDecoration:'none'}}>
+                                    حساب کاربری دارید ؟ <span className='text-primary'>ورود به پنل کاربری . . .</span>
+                                </Link>
+                            </div>
                         </Form>
                     )
                 }}
@@ -137,4 +194,4 @@ const Rigister = () => {
     );
 }
 
-export default Rigister;
+export default Register;
