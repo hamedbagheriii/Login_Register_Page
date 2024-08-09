@@ -10,8 +10,8 @@ const Radio = ({label , type , name , options}) => {
                 {({field})=>{
                     return options.map(i=>(
                         <Fragment key={i.id}>
-                            <input type={type} {...field} className='me-2' checked={field.value === i.id} value={i.id} id={i.id} />
-                            <label htmlFor={i.id} className='me-1' >{i.value}</label>
+                            <input type={type} {...field} id={`radio-${i.id}`} className='me-2' checked={field.value === i.id} value={i.id} />
+                            <label htmlFor={`radio-${i.id}`} className='me-1' >{i.value}</label>
                         </Fragment>
                     ))
                 }}

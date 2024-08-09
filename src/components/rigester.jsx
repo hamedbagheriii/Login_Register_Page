@@ -2,6 +2,7 @@ import { ErrorMessage, FastField, Form, Formik } from 'formik';
 import React from 'react';
 import FormikControl from './formikComponenet/formikControl';
 import * as Yup from 'yup'
+import PersonalError from './personalComponent/personalError';
 
 
 
@@ -17,6 +18,7 @@ const initialValues = {
     image : null ,
     skills : [] ,
     other_skills : [''] ,
+    rules : false ,
 }
 
 const onSubmit = (values , submitProps)=>{
@@ -45,6 +47,7 @@ const validationSchema = Yup.object({
     image : Yup.mixed().required('لطفا یک عکس وارد کنید .')
     .test('fileFormat' , 'لطفا فرمت png یا jpg وارد کنید .' , value=>value && value.type.includes('image/') ) ,
     skills : Yup.array().min(1,'لطفا یک مقدار انتخاب کنید') ,
+    rules : Yup.mixed().required('لطفا قوانین را مطالعه کنید .').test('check' , 'لطفا قوانین را مطالعه کنید .' , value=> value) ,
 })
 // ============== initial props ===============
 
@@ -62,13 +65,14 @@ const skills = [
     {id : 3 , value : 'JS'} ,
     {id : 4 , value : 'REACT'} ,
 ]
+
 // ============== local props ===============
 
 
 
 const Rigister = () => {
     return (
-        <div className='bg-white w-75 mx-auto' style={{borderRadius:15}}>
+        <div className='bg-white w-100  mx-auto' style={{borderRadius:15,maxWidth:550}}>
             <div className='header w-75 mx-auto pt-5 d-flex flex-column border-bottom border-1 pb-4 '>
                 <i className='fa fa-user text-primary mx-auto' style={{fontSize:90}}></i>
                 <span className='mx-auto mt-4 fs-4 fw-bold'>ثبت نام</span>
@@ -80,7 +84,7 @@ const Rigister = () => {
              validateOnMount
             >
                 {formik=>{
-                    // console.log(formik.values.other_skills);
+                    console.log(formik);
                     return(
                         <Form className='w-100 px-4 pt-1 pb-4 mt-2'>
                             
@@ -106,6 +110,15 @@ const Rigister = () => {
 
                             <FormikControl name='other_skills' control='fildArray' label='مهارت دیگری دارید ؟' formik={formik}  />
                             
+                            <div className='w-100'>
+                                <div className='w-100 d-flex align-items-center justify-content-start pt-3'>
+                                    <FastField type='checkbox' name='rules' id='rules' />
+                                    <label htmlFor={'rules'} className='pe-2 fw-bold pointer'> <span className='text-primary'>قوانین</span> را مطالعه کردم و آنها را قبول دارم .</label> 
+                                </div>
+                                <span className='d-block w-100 mt-2'>
+                                    <ErrorMessage name={'rules'} component={PersonalError} /> 
+                                </span>
+                            </div>
 
                             <div className='d-flex w-100 mt-4'>
                                 <button className='btn btn-primary w-50 mx-auto' disabled={!formik.isValid || formik.isSubmitting}>
