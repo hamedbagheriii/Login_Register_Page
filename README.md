@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+#### `English` 
+# How can I start this react project ?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project and source code was created by [hamedbagheriii](https://github.com/hamedbagheriii) .
 
-## Available Scripts
+<br />
 
-In the project directory, you can run:
+## 1- First step :
 
+Download and extract the source code file from GitHub .
+
+<br />
+<br />
+
+## 2- Second step :
+
+Open the source code file in Visual Studio Code .
+
+<br />
+<br />
+
+## 3- Third step :
+
+Open the terminal window in Visual Studio Code .\
+To do this, press the CTRL + ~ button .
+
+<br />
+<br /> 
+
+## 4- Fourth step :
+
+Enter the following command and press Enter until all project packages are installed .
+### `npm i`
+
+<br />
+
+## 5- The fifth step :
+
+After the successful installation of all packages, enter the following command in your\
+terminal to run the project on your localhost.
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 6- The sixth and last step :
+Now you can use my project completely and change it. Don't forget that if you like\
+this source code, support [hamedbagheriii](https://github.com/hamedbagheriii) on GitHub.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<br />
+<br />
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### What are the special advantages of this project?
+....
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br />
+<br />
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### `فارسی` 
+# چگونه می توانم این پروژه ریکتی را شروع کنم ؟
 
-### Making a Progressive Web App
+این پروژه و کد منبع توسط [hamedbagheriii](https://github.com/hamedbagheriii) ایجاد شده است.
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 1- مرحله اول :
 
-### Advanced Configuration
+فایل کد منبع را از GitHub دانلود و استخراج کنید.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<br />
+<br />
 
-### Deployment
+## 2- مرحله دوم :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+فایل کد منبع را در Visual Studio Code باز کنید .
 
-### `npm run build` fails to minify
+<br />
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 3- مرحله سوم :
+
+پنجره ترمینال را در Visual Studio Code باز کنید.\
+برای انجام این کار ، دکمه CTRL + ~ را فشار دهید.
+
+<br />
+<br /> 
+
+## 4- مرحله چهارم :
+
+دستور زیر را وارد کرده و Enter را فشار دهید تا تمام پکیج های پروژه نصب شوند .
+### `npm i`
+
+<br />
+
+## 5- مرحله پنجم :
+
+پس از نصب موفقیت آمیز همه پکیج ها ، برای اجرای پروژه در لوکال هاست شما ، دستور زیر\
+را در ترمینال وارد کنید .
+
+### `npm start`
+
+<br />
+
+## 6- مرحله ششم و آخر :
+اکنون می توانید از پروژه من به طور کامل استفاده کنید و آن را تغییر دهید . فراموش نکنید که اگر از پروژه من\
+خوشتون اومد ، [hamedbagheriii](https://github.com/hamedbagheriii) را در GitHub حمایت کنید .
+
+<br />
+<br />
+
+## بیشتر بدانید
+
+### مزایای ویژه این پروژه چیست ؟
+....
+
